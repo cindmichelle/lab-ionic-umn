@@ -1,0 +1,90 @@
+<html>
+  <header>
+    <meta charset="utf-8" />
+    <title>Week01 Cimi</title>
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+    <link
+      href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .listItem {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .content {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      .cardFooter {
+        text-align: right;
+        margin-left: 10%;
+      }
+    </style>
+  </header>
+  <body>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title class="ion-text-center">Budget Planner</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <br />
+      <ion-card class="content">
+        <ion-card-header>
+          <ion-card-title>
+            Input Pengeluaran
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form onsubmit="processForm(event)">
+            <ion-item>
+              <ion-input
+                type="text"
+                id="input-name"
+                placeholder="Nama Pengeluaran"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="number"
+                id="input-amount"
+                placeholder="Jumlah Pengeluaran"
+              ></ion-input>
+            </ion-item>
+            <ion-grid class="ion-padding cardFooter">
+              <ion-col>
+                <ion-button
+                  fill="outline"
+                  color="danger"
+                  onclick="clearInputValue()"
+                >
+                  <ion-icon slot="start" name="close"></ion-icon>
+                  Hapus
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button type="submit">
+                  <ion-alert-controller></ion-alert-controller>
+                  <ion-icon slot="start" name="add"></ion-icon>
+                  Tambah
+                </ion-button>
+              </ion-col>
+            </ion-grid>
+          </form>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-list id="list-item" class="listItem"></ion-list>
+      <br />
+
+      <ion-label class="content" id="total-amount"
+        >Total Pengeluaran : Rp. 0.00</ion-label
+      >
+    </ion-content>
+    <script text="text/javascript" src="app.js"></script>
+  </body>
+</html>
