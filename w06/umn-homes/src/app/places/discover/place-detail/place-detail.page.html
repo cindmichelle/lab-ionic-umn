@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places/tabs/discover"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ loadedPlace.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ loadedPlace.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-img [src]="loadedPlace.imageUrl"></ion-img>
+    <ion-card-content>
+      <p>{{ loadedPlace.description }}</p>
+      <p>{{ loadedPlace.price | currency }} / night</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="full" color="primary" margin (click)="bookPlace()">
+    Book
+  </ion-button>
+</ion-content>
